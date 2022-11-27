@@ -131,7 +131,7 @@ class MyHomePage extends StatelessWidget {
               height: 60.0,
             ),
             Container(
-              width: 300,
+              width: 301,
               height: 40,
               child: ElevatedButton(
                 // shape: RoundedRectangleBorder(
