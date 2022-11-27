@@ -109,12 +109,12 @@ class MyHomePage extends StatelessWidget {
             Container(
               width: 300,
               height: 40,
-              child: RaisedButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                elevation: 20.0,
-                color: Color(0xffc9f7f6),
+              child: ElevatedButton(
+                // shape: RoundedRectangleBorder(
+                //   borderRadius: BorderRadius.circular(10.0),
+                // ),
+                // elevation: 20.0,
+                // color: Color(0xffc9f7f6),
                 child: Text(
                   'SIGN UP',
                   style: TextStyle(color: Colors.black, fontFamily: 'Koho'),
@@ -133,12 +133,12 @@ class MyHomePage extends StatelessWidget {
             Container(
               width: 300,
               height: 40,
-              child: RaisedButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                elevation: 20.0,
-                color: Color(0xffc9f7f6),
+              child: ElevatedButton(
+                // shape: RoundedRectangleBorder(
+                //   borderRadius: BorderRadius.circular(10.0),
+                // ),
+                // elevation: 20.0,
+                // color: Color(0xffc9f7f6),
                 child: Text(
                   'LOGIN',
                   style: TextStyle(color: Colors.black, fontFamily: 'Koho'),

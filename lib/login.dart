@@ -109,12 +109,8 @@ class _loginState extends State<login> {
             Container(
               width: 120,
               height: 40,
-              child: RaisedButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                elevation: 20.0,
-                color: Color(0xffc9f7f6),
+              child: ElevatedButton(
+
                 child: Text(
                   'LOGIN',
                   style: TextStyle(
