@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "486125097535",
+    "project_id": "pushnotif-ce314",
+    "storage_bucket": "pushnotif-ce314.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:486125097535:android:acd9adeffca39c12671e8a",
+        "android_client_info": {
+          "package_name": "com.raghav.pushing_notification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "486125097535-ocotivtm4spblgqnrpce5260jln9d9tv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJ-iQKEMSzawHNw-BocSAa9YT5D-8yK8w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "486125097535-ocotivtm4spblgqnrpce5260jln9d9tv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
