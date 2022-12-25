@@ -1,46 +1,33 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:page_transition/page_transition.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:pushing_notification/bookings.dart';
 import 'package:pushing_notification/history.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'login.dart';
 import 'package:pushing_notification/main.dart';
 import 'package:fluid_bottom_nav_bar/fluid_bottom_nav_bar.dart';
+import 'homepage.dart';
+import 'bookings.dart';
 
-int pageIndex=1;
-class introscreenHome extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedSplashScreen(
-      splash: Container(
-        color: Colors.black,
-      ),
-      nextScreen: homepage(pageIndex),
-      splashTransition: SplashTransition.slideTransition,
-      pageTransitionType: PageTransitionType.bottomToTop,
-    );
-  }
-}
-
-class homepage extends StatefulWidget {
-  homepage(int index)
+int pageIndex=2;
+class history extends StatefulWidget {
+  history(int index)
   {
     pageIndex=index;
   }
-
   @override
-  State<homepage> createState() => _homepageState();
+  State<history> createState() => _historyState();
 }
 
-class _homepageState extends State<homepage> {
+class _historyState extends State<history> {
+
   Widget? _child;
 
 
   @override
   void initState() {
-    _child = homepage(pageIndex);
+    _child = history(pageIndex);
     super.initState();
   }
   void _handleNavigationChange(int index) {
@@ -51,14 +38,10 @@ class _homepageState extends State<homepage> {
           {
             _child =bookings(pageIndex);
             index=1;
-                // Navigator.push(
-                // context,
-                // MaterialPageRoute(
-                //     builder: (context) => bookings(pageIndex)));
             Navigator.of(context).pushAndRemoveUntil(
                 MaterialPageRoute(builder: (context) => bookings(pageIndex)),
                     (Route route) => false);
-                break;
+            break;
           }
         case 1:
           {
@@ -67,12 +50,24 @@ class _homepageState extends State<homepage> {
             Navigator.of(context).pushAndRemoveUntil(
                 MaterialPageRoute(builder: (context) => homepage(pageIndex)),
                     (Route route) => false);
+            // Navigator.push(
+            //     context,
+            //     MaterialPageRoute(
+            //         builder: (context) => homepage(pageIndex)));
+            // Navigator.of(context)
+            //     .popUntil(ModalRoute.withName("/homepage"));
             break;
           }
         case 2:
           {
             _child =history(pageIndex);
             index=1;
+            // Navigator.push(
+            //     context,
+            //     MaterialPageRoute(
+            //         builder: (context) => history(pageIndex)));
+            // Navigator.of(context)
+            //     .popUntil(ModalRoute.withName("/history"));
             Navigator.of(context).pushAndRemoveUntil(
                 MaterialPageRoute(builder: (context) => history(pageIndex)),
                     (Route route) => false);
@@ -102,7 +97,7 @@ class _homepageState extends State<homepage> {
                 MaterialPageRoute(builder: (context) => introscreenmain()),
                     (Route route) => false);
           }),
-      body: Center(child: Text("hello")),
+      body: Center(child: Text('hi i am history')),
       bottomNavigationBar: FluidNavBar(
         icons: [
           FluidNavBarIcon(

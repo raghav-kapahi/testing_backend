@@ -3,6 +3,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:flutter/services.dart';
 import 'package:pushing_notification/homepage.dart';
+import 'package:pushing_notification/userDetails.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'otpverify.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -40,16 +41,6 @@ class _signupState extends State<signup> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xfff7e8d1),
-      appBar: AppBar(
-        leadingWidth: 10.0,
-        backgroundColor: Color(0xff040720),
-        title: Center(
-          child: Text(
-            'SIGNUP',
-            style: TextStyle(color: Colors.white, fontFamily: 'Koho'),
-          ),
-        ),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -102,6 +93,7 @@ class _signupState extends State<signup> {
                 ),
               ),
             ),
+
             SizedBox(
               height: 20,
             ),
@@ -130,13 +122,13 @@ class _signupState extends State<signup> {
                       prefs.setBool("isLoggedIn", true);
                       var status = prefs.getBool("isLoggedIn");
                       //print(status);
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => introscreenHome()));
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (context) => introUserDetails()));
                       Navigator.of(context).pushAndRemoveUntil(
                           MaterialPageRoute(
-                              builder: (context) => introscreenHome()),
+                              builder: (context) => introUserDetails()),
                           (Route route) => false);
                     }
                   } catch (e) {

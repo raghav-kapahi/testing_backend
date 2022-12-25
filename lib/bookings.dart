@@ -1,46 +1,31 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:pushing_notification/bookings.dart';
-import 'package:pushing_notification/history.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'login.dart';
 import 'package:pushing_notification/main.dart';
 import 'package:fluid_bottom_nav_bar/fluid_bottom_nav_bar.dart';
+import 'homepage.dart';
+import 'history.dart';
+import 'bookings.dart';
 
-int pageIndex=1;
-class introscreenHome extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedSplashScreen(
-      splash: Container(
-        color: Colors.black,
-      ),
-      nextScreen: homepage(pageIndex),
-      splashTransition: SplashTransition.slideTransition,
-      pageTransitionType: PageTransitionType.bottomToTop,
-    );
-  }
-}
-
-class homepage extends StatefulWidget {
-  homepage(int index)
+int pageIndex=0;
+class bookings extends StatefulWidget {
+  bookings(int index)
   {
     pageIndex=index;
   }
 
   @override
-  State<homepage> createState() => _homepageState();
+  State<bookings> createState() => _bookingsState();
 }
 
-class _homepageState extends State<homepage> {
+class _bookingsState extends State<bookings> {
   Widget? _child;
 
 
   @override
   void initState() {
-    _child = homepage(pageIndex);
+    _child = bookings(pageIndex);
     super.initState();
   }
   void _handleNavigationChange(int index) {
@@ -51,14 +36,14 @@ class _homepageState extends State<homepage> {
           {
             _child =bookings(pageIndex);
             index=1;
-                // Navigator.push(
-                // context,
-                // MaterialPageRoute(
-                //     builder: (context) => bookings(pageIndex)));
+            // Navigator.push(
+            //     context,
+            //     MaterialPageRoute(
+            //         builder: (context) => bookings(pageIndex)));
             Navigator.of(context).pushAndRemoveUntil(
                 MaterialPageRoute(builder: (context) => bookings(pageIndex)),
                     (Route route) => false);
-                break;
+            break;
           }
         case 1:
           {
@@ -102,7 +87,7 @@ class _homepageState extends State<homepage> {
                 MaterialPageRoute(builder: (context) => introscreenmain()),
                     (Route route) => false);
           }),
-      body: Center(child: Text("hello")),
+      body: Center(child: Text('hi i am bookings')),
       bottomNavigationBar: FluidNavBar(
         icons: [
           FluidNavBarIcon(

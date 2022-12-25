@@ -36,11 +36,7 @@ Future<bool> myScreenDecide() async {
   bool? status = 0 > 1;
   status = prefs.getBool('isLoggedIn');
   print(status);
-  // var lengthMap = checkStatus.length;
-  // print(checkStatus['status']);
-  // if (lengthMap == 0) {
-  //   checkStatus['status'] = false;
-  // }
+
 
   if (status == null || status == false) {
     return Future<bool>.value(false);
@@ -110,11 +106,6 @@ class MyHomePage extends StatelessWidget {
               width: 300,
               height: 40,
               child: ElevatedButton(
-                // shape: RoundedRectangleBorder(
-                //   borderRadius: BorderRadius.circular(10.0),
-                // ),
-                // elevation: 20.0,
-                // color: Color(0xffc9f7f6),
                 child: Text(
                   'SIGN UP',
                   style: TextStyle(color: Colors.black, fontFamily: 'Koho'),
