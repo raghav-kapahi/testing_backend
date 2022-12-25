@@ -73,7 +73,7 @@ late String Name;
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Card(
-            elevation: 20,
+            elevation: 21,
             child: Text("Let Us Know a Little Bit More About You",
             style: TextStyle(
               fontSize: 30,
